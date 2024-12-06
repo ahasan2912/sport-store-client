@@ -3,8 +3,8 @@ import React from 'react';
 const SportCategoriesCard = ({ category }) => {
     const { id, image, categoryName, rating } = category;
     return (
-        <div className='border p-3 rounded-md'>
-            <img className='' src={image} alt="" />
+        <div className='border p-4 rounded-md'>
+            <img className='rounded-md h-[250px]' src={image} alt="" />
             <div className='flex items-center justify-between mt-5'>
                 <h1 className='text-2xl font-semibold'>{categoryName}</h1>
                 <div className='flex items-center gap-2'>

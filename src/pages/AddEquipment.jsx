@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../Router/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddEquipment = () => {
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const handleAddEquipment = event => {
         event.preventDefault();
         const form = event.target;
@@ -19,7 +20,7 @@ const AddEquipment = () => {
         const email = form.email.value;
         const name = form.name.value;
 
-        const newData  = {photo, item, category, description, price, rating, customization, processing, stock, quantity, email, name}
+        const newData = { photo, item, category, description, price, rating, customization, processing, stock, quantity, email, name }
         console.log(newData)
 
         fetch('http://localhost:5000/equipment', {
@@ -29,10 +30,18 @@ const AddEquipment = () => {
             },
             body: JSON.stringify(newData),
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Scuccess!',
+                        text: 'Equipment added successfully!',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+                }
+            })
     }
     return (
         <div className='max-w-7xl mx-auto'>
@@ -130,7 +139,7 @@ const AddEquipment = () => {
                                 <span className='label-text'>Stock Quantity</span>
                             </label>
                             <label className='input-group'>
-                                <input type="text" placeholder='Stock Quantity' className='input input-bordered w-full' name='quantity'  />
+                                <input type="text" placeholder='Stock Quantity' className='input input-bordered w-full' name='quantity' />
                             </label>
                         </div>
                     </div>
