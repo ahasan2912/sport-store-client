@@ -2,15 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const EquipmentCard = ({ equipment }) => {
-    const { _id, photo, item, category, price, rating } = equipment;
+    const { _id, photo, item, category, price, rating, stock } = equipment;
     return (
         <div className='border p-4 rounded-md'>
             <img className='rounded-md h-[250px] w-full' src={photo} alt="" />
             <div className='mt-4 space-y-1'>
                 <h3 className='text-2xl font-semibold'>{item}</h3>
-                <p className='text-sm font-semibold text-gray-700'>Category: {category}</p>
                 <div className='flex items-center justify-between'>
-                    <h5 className='font-semibold'>Price: ${price}</h5>
+                    <p className='text-sm font-semibold text-gray-700'>Category: {category}</p>
                     <div className='flex items-center gap-2'>
                         <p className='font-semibold'>{rating}</p>
                         <div className="rating">
@@ -26,8 +25,12 @@ const EquipmentCard = ({ equipment }) => {
                         </div>
                     </div>
                 </div>
+                <div className='flex items-center justify-between space-y-1'>
+                    <h5 className='font-semibold'>Price: ${price}</h5>
+                    <p className='text-base font-semibold border px-4 py-1 cursor-pointer rounded-md hover:bg-base-300'>{stock}</p>
+                </div>
                 <div>
-                    <Link className='btn mt-2'>View Details</Link>
+                    <Link to={`/equipment/${_id}`} className='btn mt-2 text-base'>View Details</Link>
                 </div>
             </div>
         </div>

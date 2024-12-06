@@ -44,9 +44,9 @@ const AddEquipment = () => {
             })
     }
     return (
-        <div className='max-w-7xl mx-auto'>
-            <h2 className='text-4xl font-extrabold text-center mt-10 mb-6'>Add Equipment</h2>
-            <div className='bg-[#F4F3F0] px-6 py-10 rounded-xl'>
+        <div className='max-w-7xl mx-auto my-10'>
+            <h2 className='text-4xl font-extrabold text-center mt-10'>Add Equipment</h2>
+            <div className='bg-[#F4F3F0] px-6 py-10 rounded-xl mt-10'>
                 <form onSubmit={handleAddEquipment}>
                     {/* form row */}
                     <div className='md:flex gap-6'>
