@@ -5,7 +5,7 @@ const EquipmentCard = ({ equipment }) => {
     const { _id, photo, item, category, price, rating } = equipment;
     return (
         <div className='border p-4 rounded-md'>
-            <img className='rounded-md h-[250px]' src={photo} alt="" />
+            <img className='rounded-md h-[250px] w-full' src={photo} alt="" />
             <div className='mt-4 space-y-1'>
                 <h3 className='text-2xl font-semibold'>{item}</h3>
                 <p className='text-sm font-semibold text-gray-700'>Category: {category}</p>
