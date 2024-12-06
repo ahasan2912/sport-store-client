@@ -77,7 +77,7 @@ const SignIn = () => {
                     {
                         error && (<p className='text-red-500 font-semibold text-center text-sm'>{error}</p>)
                     }
-                    <div className='flex items-center justify-center py-2 btn btn-outline btn-primary mt-2 text-gray-700 hover:text-white'>
+                    <div onClick={handleSignInGoogle} className='flex items-center justify-center py-2 btn btn-outline btn-primary mt-2 text-gray-700 hover:text-white'>
                         <img className='w-6' src={googleLogo} alt="" />
                         <span>Login with Google</span>
                     </div>

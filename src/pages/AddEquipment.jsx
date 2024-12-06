@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../Router/AuthProvider';
 
 const AddEquipment = () => {
+    const {user} = useContext(AuthContext);
     const handleAddEquipment = event => {
         event.preventDefault();
         const form = event.target;
@@ -128,7 +130,7 @@ const AddEquipment = () => {
                                 <span className='label-text'>Stock Quantity</span>
                             </label>
                             <label className='input-group'>
-                                <input type="text" placeholder='Stock Quantity' className='input input-bordered w-full' name='quantity' />
+                                <input type="text" placeholder='Stock Quantity' className='input input-bordered w-full' name='quantity'  />
                             </label>
                         </div>
                     </div>
@@ -139,7 +141,7 @@ const AddEquipment = () => {
                                 <span className='label-text'>User Email</span>
                             </label>
                             <label className='input-group'>
-                                <input type="text" placeholder='User Email' className='input input-bordered w-full' name='email' />
+                                <input type="text" placeholder='User Email' className='input input-bordered w-full' defaultValue={user?.email} name='email' />
                             </label>
                         </div>
                         <div className='form-control md:w-1/2'>
@@ -147,7 +149,7 @@ const AddEquipment = () => {
                                 <span className='label-text'>User Name</span>
                             </label>
                             <label className='input-group'>
-                                <input type="text" placeholder='name' className='input input-bordered w-full' name='name' />
+                                <input type="text" placeholder='name' className='input input-bordered w-full' defaultValue={user?.displayName} name='name' />
                             </label>
                         </div>
                     </div>
