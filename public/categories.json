@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "image": "https://i.ibb.co.com/rtw4Mr2/premium-photo-1676291661502-451bf0442eca.jpg",
+      "categoryName": "Football",
+      "rating": 4.5
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co.com/ctpB2Tg/premium-photo-1722351690086-b42310f14c14.jpg",
+      "categoryName": "Cricket",
+      "rating": 4.7
+    },
+    {
+      "id": 3,
+      "image": "https://i.ibb.co.com/DbbVycZ/premium-photo-1709932755399-b61bb0a3aa2a.jpg",
+      "categoryName": "Tennis Racquet",
+      "rating": 4.8
+    },
+    {
+      "id": 4,
+      "image": "https://i.ibb.co.com/5T3KjDd/photo-1523142096306-cca37b5aa001.jpg",
+      "categoryName": "Basketball",
+      "rating": 4.6
+    },
+    {
+      "id": 5,
+      "image": "https://i.ibb.co.com/9YGSSvs/premium-photo-1664475346292-6dcb3f2b563d.jpg",
+      "categoryName": "Swimming Goggles",
+      "rating": 4.3
+    },
+    {
+      "id": 6,
+      "image": "https://i.ibb.co.com/sCkyYH7/photo-1510894347713-fc3ed6fdf539.jpg",
+      "categoryName": "Yoga Mat",
+      "rating": 4.9
+    }
+  ]
+  
