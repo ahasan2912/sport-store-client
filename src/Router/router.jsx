@@ -9,6 +9,7 @@ import AddEquipment from "../pages/AddEquipment";
 import AllEquipment from "../pages/AllEquipment";
 import EquipmentDetails from "../pages/EquipmentDetails";
 import PrivetRouter from "./PrivetRouter";
+import MyEequipment from "../pages/MyEequipment";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
                 path: '/equipment/:id',
                 element: <PrivetRouter><EquipmentDetails></EquipmentDetails></PrivetRouter>,
                 loader: ({ params }) => fetch(`http://localhost:5000/equipment/${params.id}`)
+            },
+            {
+                path: '/myequipment',
+                element: <MyEequipment></MyEequipment>,
+                loader: ()=> fetch('http://localhost:5000/allequipment')
             },
             {
                 path: "/signup",
