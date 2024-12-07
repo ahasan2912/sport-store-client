@@ -8,12 +8,12 @@ const AllEquipment = () => {
     const [equipments, setEquipments] = useState(equipmentData);
     return (
         <div className="overflow-x-auto mt-10 w-full md:max-w-5xl mx-auto">
-            <h1 className='text-4xl font-bold text-center'>All Equipments List</h1>
+            <h1 className='text-5xl font-bold text-center'>All Equipments List</h1>
             <div className='my-6'>
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr className='text-base'>
+                        <tr className='text-base border'>
                             <th>Serial No</th>
                             <th>Item Name</th>
                             <th>Category Name</th>
@@ -25,7 +25,7 @@ const AllEquipment = () => {
                     <tbody>
                         {
                             equipments.map((equipment, idx) =>
-                                <tr key={idx} className="hover">
+                                <tr key={idx} className="hover border">
                                     <th>{idx + 1}</th>
                                     <td>{equipment.item}</td>
                                     <td>{equipment.category}</td>

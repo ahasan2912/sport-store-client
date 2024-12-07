@@ -15,7 +15,7 @@ const MyEquipmentCard = ({ equipment, equipments, setEquipments }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/equipment/${id}`, {
+                fetch(`http://localhost:5000/allequipment/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -61,7 +61,7 @@ const MyEquipmentCard = ({ equipment, equipments, setEquipments }) => {
                 </div>
                 <div className='space-x-3'>
                     <Link to={`/equipment/${_id}`} className='btn mt-2 text-base'>View Details</Link>
-                    <Link to="/updateEquipment" className='btn mt-2 text-base'>Update</Link>
+                    <Link to={`/updateEquipment/${_id}`} className='btn mt-2 text-base'>Update</Link>
                     <Link onClick={() => handleDeleteBtn(_id)} className='btn mt-2 text-base'>Delete</Link>
                 </div>
             </div>

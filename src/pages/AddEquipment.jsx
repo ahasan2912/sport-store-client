@@ -19,9 +19,7 @@ const AddEquipment = () => {
         const quantity = form.quantity.value;
         const email = form.email.value;
         const name = form.name.value;
-
         const newData = { photo, item, category, description, price, rating, customization, processing, stock, quantity, email, name }
-        console.log(newData)
 
         fetch('http://localhost:5000/equipment', {
             method: 'POST',
@@ -52,7 +50,7 @@ const AddEquipment = () => {
                     <div className='md:flex gap-6'>
                         <div className='form-control md:w-1/2 '>
                             <label className='label'>
-                                <span className='label-text font-semibold'>Equipement Image URL</span>
+                                <span className='label-text font-semibold'>Equipement Image URL <span className='text-orange-500 text-lg'>*</span></span>
                             </label>
                             <label className='input-group'>
                                 <input type="text" placeholder='Image URL' className='input input-bordered w-full' name='photo' required/>
@@ -60,7 +58,7 @@ const AddEquipment = () => {
                         </div>
                         <div className='form-control md:w-1/2'>
                             <label className='label'>
-                                <span className='label-text'>Item Name</span>
+                                <span className='label-text font-semibold'>Item Name <span className='text-orange-500 text-lg'>*</span></span>
                             </label>
                             <label className='input-group'>
                                 <input type="text" placeholder='Item Name' className='input input-bordered w-full' name='item' required/>
@@ -71,7 +69,7 @@ const AddEquipment = () => {
                     <div className='md:flex gap-6'>
                         <div className='form-control md:w-1/2'>
                             <label className='label'>
-                                <span className='label-text'>Category Name</span>
+                                <span className='label-text font-semibold'>Category Name</span>
                             </label>
                             <label className='input-group'>
                                 <input type="text" placeholder='Category Name' className='input input-bordered w-full' name='category'/>
@@ -79,7 +77,7 @@ const AddEquipment = () => {
                         </div>
                         <div className='form-control md:w-1/2'>
                             <label className='label'>
-                                <span className='label-text'>Description</span>
+                                <span className='label-text font-semibold'>Description</span>
                             </label>
                             <label className='input-group'>
                                 <input type="text" placeholder='Description' className='input input-bordered w-full' name='description' />
@@ -90,7 +88,7 @@ const AddEquipment = () => {
                     <div className='md:flex gap-6'>
                         <div className='form-control md:w-1/2'>
                             <label className='label'>
-                                <span className='label-text'>Price</span>
+                                <span className='label-text font-semibold'>Price</span>
                             </label>
                             <label className='input-group'>
                                 <input type="text" placeholder='Price' className='input input-bordered w-full' name='price' />
@@ -98,7 +96,7 @@ const AddEquipment = () => {
                         </div>
                         <div className='form-control md:w-1/2'>
                             <label className='label'>
-                                <span className='label-text'>Rating</span>
+                                <span className='label-text font-semibold'>Rating</span>
                             </label>
                             <label className='input-group'>
                                 <input type="text" placeholder='Rating' className='input input-bordered w-full' name='rating' />
@@ -109,7 +107,7 @@ const AddEquipment = () => {
                     <div className='md:flex gap-6'>
                         <div className='form-control md:w-1/2'>
                             <label className='label'>
-                                <span className='label-text'>Customization</span>
+                                <span className='label-text font-semibold'>Customization</span>
                             </label>
                             <label className='input-group'>
                                 <input type="text" placeholder='Customization' className='input input-bordered w-full' name='customization' />
@@ -117,7 +115,7 @@ const AddEquipment = () => {
                         </div>
                         <div className='form-control md:w-1/2'>
                             <label className='label'>
-                                <span className='label-text'>Processing Time</span>
+                                <span className='label-text font-semibold'>Processing Time</span>
                             </label>
                             <label className='input-group'>
                                 <input type="text" placeholder='Processing Time' className='input input-bordered w-full' name='processing' />
@@ -128,7 +126,7 @@ const AddEquipment = () => {
                     <div className='md:flex gap-6'>
                         <div className='form-control md:w-1/2'>
                             <label className='label'>
-                                <span className='label-text'>Stock Status</span>
+                                <span className='label-text font-semibold'>Stock Status</span>
                             </label>
                             <label className='input-group'>
                                 <input type="text" placeholder='Stock Status' className='input input-bordered w-full' name='stock' />
@@ -136,7 +134,7 @@ const AddEquipment = () => {
                         </div>
                         <div className='form-control md:w-1/2'>
                             <label className='label'>
-                                <span className='label-text'>Stock Quantity</span>
+                                <span className='label-text font-semibold'>Stock Quantity</span>
                             </label>
                             <label className='input-group'>
                                 <input type="text" placeholder='Stock Quantity' className='input input-bordered w-full' name='quantity' />
@@ -147,7 +145,7 @@ const AddEquipment = () => {
                     <div className='md:flex gap-6'>
                         <div className='form-control md:w-1/2'>
                             <label className='label'>
-                                <span className='label-text'>User Email</span>
+                                <span className='label-text font-semibold'>User Email <span className='text-orange-500 text-lg'>*</span></span>
                             </label>
                             <label className='input-group'>
                                 <input type="text" placeholder='User Email' className='input input-bordered w-full' defaultValue={user?.email} name='email' />
@@ -155,7 +153,7 @@ const AddEquipment = () => {
                         </div>
                         <div className='form-control md:w-1/2'>
                             <label className='label'>
-                                <span className='label-text'>User Name</span>
+                                <span className='label-text font-semibold'>User Name <span className='text-orange-500 text-lg'>*</span></span>
                             </label>
                             <label className='input-group'>
                                 <input type="text" placeholder='name' className='input input-bordered w-full' defaultValue={user?.displayName} name='name' />

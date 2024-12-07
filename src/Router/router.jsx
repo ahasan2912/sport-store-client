@@ -40,11 +40,12 @@ const router = createBrowserRouter([
             {
                 path: '/myequipment',
                 element: <PrivetRouter><MyEequipment></MyEequipment></PrivetRouter>,
-                loader: ()=> fetch('http://localhost:5000/allequipment')
+                loader: () => fetch('http://localhost:5000/allequipment')
             },
             {
-                path: '/updateEquipment',
-                element: <UpdateEquipment></UpdateEquipment>
+                path: '/updateEquipment/:id',
+                element: <UpdateEquipment></UpdateEquipment>,
+                loader: ({params}) => fetch(`http://localhost:5000/allequipment/${params.id}`)
             },
             {
                 path: "/signup",
