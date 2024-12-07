@@ -1,16 +1,16 @@
 
 import { createBrowserRouter } from "react-router-dom";
-import ErrorPages from "../pages/ErrorPages";
 import MainLayout from "../layout/MainLayout";
-import Home from "../pages/Home";
-import SignUp from "../pages/signup";
-import SignIn from "../pages/signin";
 import AddEquipment from "../pages/AddEquipment";
 import AllEquipment from "../pages/AllEquipment";
 import EquipmentDetails from "../pages/EquipmentDetails";
-import PrivetRouter from "./PrivetRouter";
+import ErrorPages from "../pages/ErrorPages";
+import Home from "../pages/Home";
 import MyEequipment from "../pages/MyEequipment";
+import SignIn from "../pages/signin";
+import SignUp from "../pages/signup";
 import UpdateEquipment from "../pages/UpdateEquipment";
+import PrivetRouter from "./PrivetRouter";
 
 const router = createBrowserRouter([
     {
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/equipment')
+                loader: () => fetch('https://sport-store-server.vercel.app/equipment')
             },
             {
                 path: '/addequipment',
@@ -30,22 +30,22 @@ const router = createBrowserRouter([
             {
                 path: '/allequipment',
                 element: <AllEquipment></AllEquipment>,
-                loader: () => fetch('http://localhost:5000/allequipment')
+                loader: () => fetch('https://sport-store-server.vercel.app/allequipment')
             },
             {
                 path: '/equipment/:id',
                 element: <PrivetRouter><EquipmentDetails></EquipmentDetails></PrivetRouter>,
-                loader: ({ params }) => fetch(`http://localhost:5000/equipment/${params.id}`)
+                loader: ({ params }) => fetch(`https://sport-store-server.vercel.app/equipment/${params.id}`)
             },
             {
                 path: '/myequipment',
                 element: <PrivetRouter><MyEequipment></MyEequipment></PrivetRouter>,
-                loader: () => fetch('http://localhost:5000/allequipment')
+                loader: () => fetch('https://sport-store-server.vercel.app/allequipment')
             },
             {
                 path: '/updateEquipment/:id',
                 element: <UpdateEquipment></UpdateEquipment>,
-                loader: ({params}) => fetch(`http://localhost:5000/allequipment/${params.id}`)
+                loader: ({params}) => fetch(`https://sport-store-server.vercel.app/allequipment/${params.id}`)
             },
             {
                 path: "/signup",

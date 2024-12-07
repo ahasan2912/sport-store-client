@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../Router/AuthProvider';
 import { useLoaderData, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../Router/AuthProvider';
 
 const UpdateEquipment = () => {
     const { user } = useContext(AuthContext);
@@ -26,7 +26,7 @@ const UpdateEquipment = () => {
         const updateData = {
             photo, item, category, description, price, rating, customization, processing, stock, quantity, email, name
         }
-        fetch(`http://localhost:5000/allequipment/${_id}`, {
+        fetch(`https://sport-store-server.vercel.app/allequipment/${_id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

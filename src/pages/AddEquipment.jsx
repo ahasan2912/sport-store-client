@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../Router/AuthProvider';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../Router/AuthProvider';
 
 const AddEquipment = () => {
     const { user } = useContext(AuthContext);
@@ -21,7 +21,7 @@ const AddEquipment = () => {
         const name = form.name.value;
         const newData = { photo, item, category, description, price, rating, customization, processing, stock, quantity, email, name }
 
-        fetch('http://localhost:5000/equipment', {
+        fetch('https://sport-store-server.vercel.app/equipment', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
