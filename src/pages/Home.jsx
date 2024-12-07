@@ -20,7 +20,7 @@ const Home = () => {
                     }
                 </div>
             </div>
-            <div className='my-28'>
+            <div className='my-20'>
                 <SportCategories></SportCategories>
             </div>
         </div>

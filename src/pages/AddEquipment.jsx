@@ -33,11 +33,12 @@ const AddEquipment = () => {
                 console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
-                        title: 'Scuccess!',
+                        title: 'Added Scuccess!',
                         text: 'Equipment added successfully!',
                         icon: 'success',
                         confirmButtonText: 'Ok'
                     })
+                    form.reset();
                 }
             })
     }
