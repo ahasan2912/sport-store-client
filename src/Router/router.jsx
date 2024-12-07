@@ -10,6 +10,7 @@ import AllEquipment from "../pages/AllEquipment";
 import EquipmentDetails from "../pages/EquipmentDetails";
 import PrivetRouter from "./PrivetRouter";
 import MyEequipment from "../pages/MyEequipment";
+import UpdateEquipment from "../pages/UpdateEquipment";
 
 const router = createBrowserRouter([
     {
@@ -38,8 +39,12 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myequipment',
-                element: <MyEequipment></MyEequipment>,
+                element: <PrivetRouter><MyEequipment></MyEequipment></PrivetRouter>,
                 loader: ()=> fetch('http://localhost:5000/allequipment')
+            },
+            {
+                path: '/updateEquipment',
+                element: <UpdateEquipment></UpdateEquipment>
             },
             {
                 path: "/signup",

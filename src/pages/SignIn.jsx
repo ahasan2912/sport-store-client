@@ -16,7 +16,6 @@ const SignIn = () => {
         evetn.preventDefault();
         const email = evetn.target.email.value;
         const password = evetn.target.password.value;
-        console.log(email, password)
         setError("");
 
         handleLogInEmail(email, password)
@@ -33,13 +32,11 @@ const SignIn = () => {
     const handleSignInGoogle = () =>{
         handleLogInWithGoogle()
         .then(res => {
-            console.log(res.user);
             toast.success("You have successfully Login!")
             nevigate(location?.state ? location.state : "/");
         })
         .catch((err) => {
             setError(err.message);
-            console.log(err.message);
         })
     }
 
