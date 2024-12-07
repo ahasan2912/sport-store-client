@@ -55,7 +55,7 @@ const AddEquipment = () => {
                                 <span className='label-text font-semibold'>Equipement Image URL</span>
                             </label>
                             <label className='input-group'>
-                                <input type="text" placeholder='Image URL' className='input input-bordered w-full' name='photo' />
+                                <input type="text" placeholder='Image URL' className='input input-bordered w-full' name='photo' required/>
                             </label>
                         </div>
                         <div className='form-control md:w-1/2'>
@@ -63,7 +63,7 @@ const AddEquipment = () => {
                                 <span className='label-text'>Item Name</span>
                             </label>
                             <label className='input-group'>
-                                <input type="text" placeholder='Item Name' className='input input-bordered w-full' name='item' />
+                                <input type="text" placeholder='Item Name' className='input input-bordered w-full' name='item' required/>
                             </label>
                         </div>
                     </div>
@@ -74,7 +74,7 @@ const AddEquipment = () => {
                                 <span className='label-text'>Category Name</span>
                             </label>
                             <label className='input-group'>
-                                <input type="text" placeholder='Category Name' className='input input-bordered w-full' name='category' />
+                                <input type="text" placeholder='Category Name' className='input input-bordered w-full' name='category'/>
                             </label>
                         </div>
                         <div className='form-control md:w-1/2'>

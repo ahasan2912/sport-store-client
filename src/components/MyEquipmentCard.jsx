@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-const MyEquipmentCard = ({ equipment }) => {
+const MyEquipmentCard = ({ equipment, equipments, setEquipments }) => {
     const { _id, photo, item, category, price, rating, stock } = equipment;
     const handleDeleteBtn = (id) => {
         Swal.fire({
@@ -27,6 +27,8 @@ const MyEquipmentCard = ({ equipment }) => {
                                 icon: "success"
                             });
                         }
+                        const reamingEquipment = equipments.filter(equ => equ._id !== id);
+                        setEquipments(reamingEquipment);
                     })
             }
         });
