@@ -24,6 +24,7 @@ The Sports Accessories Online Store is a responsive e-commerce platform designed
 - Node.js and npm
 - JSX
 - MongoDB
+- CRUD Operation
 - React Router
 - React Icons
 - Firebase Authentication
