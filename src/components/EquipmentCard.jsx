@@ -1,11 +1,14 @@
 import React from 'react';
+import { Bounce, Rotate } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
 
 const EquipmentCard = ({ equipment }) => {
     const { _id, photo, item, category, price, rating, stock } = equipment;
     return (
         <div className='border p-4 rounded-md'>
-            <img className='rounded-md h-[250px] w-full' src={photo} alt="" />
+            <Rotate>
+                <img className='rounded-md h-[250px] w-full' src={photo} alt="" />
+            </Rotate>
             <div className='mt-4 space-y-1'>
                 <h3 className='text-2xl font-semibold'>{item}</h3>
                 <div className='flex items-center justify-between'>

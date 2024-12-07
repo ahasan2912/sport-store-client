@@ -34,7 +34,6 @@ const SignUp = () => {
                 toast.success("You have successfully registered");
                 setUser(result.user);
                 nevigate(location?.state ? location.state : "/");
-                console.log(result.user)
             })
             .catch((err) => {
                 setError(err.message);

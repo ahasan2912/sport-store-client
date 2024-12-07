@@ -1,10 +1,13 @@
 import React from 'react';
+import { Bounce, Rotate } from 'react-awesome-reveal';
 
 const SportCategoriesCard = ({ category }) => {
     const { id, image, categoryName, rating } = category;
     return (
         <div className='border p-4 rounded-md'>
-            <img className='rounded-md h-[250px]' src={image} alt="" />
+            <Rotate>
+                <img className='rounded-md h-[250px]' src={image} alt="" />
+            </Rotate>
             <div className='flex items-center justify-between mt-5'>
                 <h1 className='text-2xl font-semibold'>{categoryName}</h1>
                 <div className='flex items-center gap-2'>

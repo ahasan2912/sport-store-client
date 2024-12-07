@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Router/AuthProvider';
+import { use } from 'react';
+import { Tooltip as ReactTooltip } from "react-tooltip";
+
 
 const Navbar = () => {
     const { user, handleLogOut } = useContext(AuthContext);
@@ -46,9 +49,12 @@ const Navbar = () => {
                     user && user?.email ?
                         <div className='flex items-center justify-center gap-2'>
                             <div className='flex gap-2 items-center justify-center'>
-                                <div className="tooltip  tooltip-bottom z-50" data-tip={user?.displayName}>
-                                    <img className='w-12 h-12 rounded-full object-cover' src={user.photoURL} alt="" />
-                                </div>
+                                <img data-tooltip-id="my-tooltip-1" className='w-12 h-12 rounded-full object-cover' src={user.photoURL} alt="" />
+                                <ReactTooltip
+                                    id="my-tooltip-1"
+                                    place="bottom"
+                                    content={user?.displayName}
+                                />
                             </div>
                             <Link onClick={handleLogOut} to="/" className="btn text-black">Logout</Link>
                         </div> : <Link to='/signin' className="btn font-semibold text-base">LogIn</Link>

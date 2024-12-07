@@ -1,4 +1,5 @@
 import React from 'react';
+import { Rotate } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -35,7 +36,9 @@ const MyEquipmentCard = ({ equipment, equipments, setEquipments }) => {
     }
     return (
         <div className='border p-4 rounded-md'>
-            <img className='rounded-md h-[250px] w-full' src={photo} alt="" />
+            <Rotate>
+                <img className='rounded-md h-[250px] w-full' src={photo} alt="" />
+            </Rotate>
             <div className='mt-4 space-y-1'>
                 <h3 className='text-2xl font-semibold'>{item}</h3>
                 <div className='flex items-center justify-between'>

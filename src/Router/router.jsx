@@ -44,7 +44,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/updateEquipment/:id',
-                element: <UpdateEquipment></UpdateEquipment>,
+                element: <PrivetRouter><UpdateEquipment></UpdateEquipment></PrivetRouter>,
                 loader: ({params}) => fetch(`https://sport-store-server.vercel.app/allequipment/${params.id}`)
             },
             {
