@@ -11,7 +11,7 @@ const EquipmentCard = ({ equipment }) => {
                 <div className='mt-4 space-y-1'>
                     <h3 className='text-2xl font-semibold'>{item}</h3>
                     <div className='flex items-center justify-between'>
-                        <p className='text-sm font-semibold text-gray-700'>Category: {category}</p>
+                        <p className='text-sm font-semibold text-gray-500'>Category: {category}</p>
                         <div className='flex items-center gap-2'>
                             <p className='font-semibold'>{rating}</p>
                             <div className="rating">

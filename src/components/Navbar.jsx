@@ -1,12 +1,55 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Router/AuthProvider';
-import { use } from 'react';
 import { Tooltip as ReactTooltip } from "react-tooltip";
-
+import { FaSun, FaMoon, FaDesktop } from "react-icons/fa";
 
 const Navbar = () => {
     const { user, handleLogOut } = useContext(AuthContext);
+    //For Dark and Light Mode
+    /* const [theme, setTheme] = useState(
+        localStorage.getItem("theme") || "system"
+    );
+
+    useEffect(() => {
+        const root = document.documentElement;
+        if (theme === "system") {
+            const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            root.setAttribute("data-theme", dark ? "dark" : "light");
+        }
+        else {
+            root.setAttribute("data-theme", theme);
+        }
+        localStorage.setItem("theme", theme);
+    }, [theme]);
+
+    const handleTheme = () => {
+        if (theme === "light") {
+            setTheme("dark");
+        }
+        else if (theme === "dark") {
+            setTheme("system");
+        }
+        else {
+            setTheme("light");
+        }
+    }; */
+
+    const [theme, setTheme] = useState(
+        localStorage.getItem("theme") || "light"
+    );
+
+    useEffect(() => {
+        const root = document.documentElement;
+        root.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+    }, [theme]);
+
+    const handleTheme = () => {
+        setTheme(theme === "light" ? "dark" : "light");
+    }
+
+
     return (
         <div className="navbar bg-base-100 shadow-md px-4 fixed w-full z-50">
             <div className="navbar-start">
@@ -44,7 +87,7 @@ const Navbar = () => {
                     <NavLink to='/myequipment' className="hover:text-red-600">My Equipment</NavLink>
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end space-x-2">
                 {
                     user && user?.email ?
                         <div className='flex items-center justify-center gap-2'>
@@ -56,9 +99,16 @@ const Navbar = () => {
                                     content={user?.displayName}
                                 />
                             </div>
-                            <Link onClick={handleLogOut} to="/" className="btn text-black">Logout</Link>
-                        </div> : <Link to='/signin' className="btn font-semibold text-base">LogIn</Link>
+                            <Link onClick={handleLogOut} to="/" className="btn btn-ghost">LogOut</Link>
+                        </div> : <Link to='/signin' className="btn btn-ghost font-semibold text-base">LogIn</Link>
                 }
+                <div>
+                    <button className='p-2 rounded-full bg-base-200 shadow-md flex items-center justify-center' onClick={handleTheme} title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}>
+                        {
+                            theme === "light" ? <FaSun className="text-gray-600 text-2xl"></FaSun> : <FaMoon className="text-blue-500 text-2xl"></FaMoon>
+                        }
+                    </button>
+                </div>
             </div>
         </div>
     );
