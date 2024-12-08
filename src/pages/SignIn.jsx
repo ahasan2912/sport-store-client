@@ -4,6 +4,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Router/AuthProvider';
 import googleLogo from '../assets/google-icon.png'
 import toast from 'react-hot-toast';
+import box from '../box.json';
+import Lottie from 'lottie-react';
 
 const SignIn = () => {
     const { handleLogInEmail, handleLogInWithGoogle, setUser } = useContext(AuthContext);
@@ -19,32 +21,35 @@ const SignIn = () => {
         setError("");
 
         handleLogInEmail(email, password)
-        .then((result) => {
-            setUser(result.user);
-            toast.success("You have successfully Login!");
-            nevigate(location?.state ? location.state : "/");
-        })
-        .catch((err) => {
-            setError(err.message);
-        })
+            .then((result) => {
+                setUser(result.user);
+                toast.success("You have successfully Login!");
+                nevigate(location?.state ? location.state : "/");
+            })
+            .catch((err) => {
+                setError(err.message);
+            })
     }
 
-    const handleSignInGoogle = () =>{
+    const handleSignInGoogle = () => {
         handleLogInWithGoogle()
-        .then(res => {
-            toast.success("You have successfully Login!")
-            nevigate(location?.state ? location.state : "/");
-        })
-        .catch((err) => {
-            setError(err.message);
-        })
+            .then(res => {
+                toast.success("You have successfully Login!")
+                nevigate(location?.state ? location.state : "/");
+            })
+            .catch((err) => {
+                setError(err.message);
+            })
     }
 
     return (
         <div className='flex flex-col items-center justify-center mt-14 px-5'>
             <div className='card bg-base-200 w-full max-w-md shrink-0'>
                 <form onSubmit={handlesignInBtn} className="card-body">
-                    <h1 className='text-3xl font-semibold text-center'>Login your account</h1>
+                    <div className='flex items-center justify-center'>
+                        <h1 className='text-3xl font-semibold text-center'>SignIn your account</h1>
+                        <Lottie className='w-20' animationData={box}></Lottie>
+                    </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
@@ -78,7 +83,7 @@ const SignIn = () => {
                         <img className='w-6' src={googleLogo} alt="" />
                         <span>Login with Google</span>
                     </div>
-                    <Link to='/signup' className='font-semibold text-red-500 text-center text-sm'>Don't Have an account? Register</Link>
+                    <Link to='/signup' className='font-semibold text-red-500 text-center text-sm'>Don't Have an account? SignUp</Link>
                 </form>
             </div>
         </div>

@@ -4,6 +4,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import googleLogo from '../assets/google-icon.png'
 import { AuthContext } from '../Router/AuthProvider';
 import toast from 'react-hot-toast';
+import box from '../box.json';
+import Lottie from 'lottie-react';
 
 const SignUp = () => {
     const { createUser, handleLogInWithGoogle, setUser } = useContext(AuthContext);
@@ -51,7 +53,10 @@ const SignUp = () => {
         <div className='flex flex-col items-center justify-center my-14 px-5'>
             <div className='card bg-base-200 w-full max-w-md shrink-0'>
                 <form onSubmit={handleSignUpBtn} className="card-body">
-                    <h1 className='text-3xl font-semibold text-center'>SignUp your account</h1>
+                    <div className='flex items-center justify-center'>
+                        <h1 className='text-3xl font-semibold text-center'>SignUp your account</h1>
+                        <Lottie className='w-20' animationData={box}></Lottie>
+                    </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Name</span>
@@ -91,7 +96,7 @@ const SignUp = () => {
                         <img className='w-6' src={googleLogo} alt="" />
                         <span>Register with Google</span>
                     </div>
-                    <Link to='/signin' className='font-semibold text-red-500 text-center text-sm'>Allready Have an account ? Login</Link>
+                    <Link to='/signin' className='font-semibold text-red-500 text-center text-sm'>Allready Have an account ? SignIn</Link>
                 </form>
             </div>
         </div>

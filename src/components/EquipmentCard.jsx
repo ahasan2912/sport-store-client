@@ -33,6 +33,7 @@ const EquipmentCard = ({ equipment }) => {
                     </div>
                     <div>
                         <Link to={`/equipment/${_id}`} className='btn mt-2 text-base'>View Details</Link>
+
                     </div>
                 </div>
             </div>
