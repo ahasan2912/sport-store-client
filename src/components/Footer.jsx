@@ -1,7 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-
 const Footer = () => {
     return (
         <footer className="bg-[#454444] text-white text-sm">

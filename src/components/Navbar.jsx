@@ -2,10 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Router/AuthProvider';
 import { Tooltip as ReactTooltip } from "react-tooltip";
-import { FaSun, FaMoon, FaDesktop } from "react-icons/fa";
+import { FaSun, FaMoon } from "react-icons/fa";
 
 const Navbar = () => {
     const { user, handleLogOut } = useContext(AuthContext);
+    
     //For Dark and Light Mode
     /* const [theme, setTheme] = useState(
         localStorage.getItem("theme") || "system"
@@ -70,7 +71,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow-md text-base font-semibold">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow-md text-base font-semibold gap-3">
                         <NavLink to='/'>Home</NavLink>
                         <NavLink to='/allequipment'>All Equipment</NavLink>
                         <NavLink to='/addequipment'>Add Equipment</NavLink>
@@ -102,7 +103,7 @@ const Navbar = () => {
                             <Link onClick={handleLogOut} to="/" className="btn btn-ghost">LogOut</Link>
                         </div> : <Link to='/signin' className="btn btn-ghost font-semibold text-base">LogIn</Link>
                 }
-                <div>
+                <div className='hidden md:block'>
                     <button className='p-2 rounded-full bg-base-200 shadow-md flex items-center justify-center' onClick={handleTheme} title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}>
                         {
                             theme === "light" ? <FaSun className="text-gray-600 text-2xl"></FaSun> : <FaMoon className="text-blue-500 text-2xl"></FaMoon>

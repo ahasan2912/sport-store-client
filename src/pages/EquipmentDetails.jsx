@@ -1,4 +1,5 @@
 import React from 'react';
+import { Zoom } from 'react-awesome-reveal';
 import { useLoaderData } from 'react-router-dom';
 
 const EquipmentDetails = () => {
