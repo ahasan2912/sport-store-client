@@ -6,30 +6,30 @@ import { Navigation } from 'swiper/modules';
 import banner1 from '../assets/banner1.jpg';
 import banner2 from '../assets/banner2.jpg';
 import banner3 from '../assets/banner3.jpg';
-import { Bounce } from 'react-awesome-reveal';
+import { Zoom } from 'react-awesome-reveal';
 const Banner = () => {
     return (
         <div className='w-full'>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                 <SwiperSlide>
                     <div>
-                        <Bounce>
+                        <Zoom>
                             <img src={banner1} className='w-full' alt="" />
-                        </Bounce>
+                        </Zoom>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div>
-                        <Bounce>
+                        <Zoom>
                             <img src={banner2} className='w-full' alt="" />
-                        </Bounce>
+                        </Zoom>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div>
-                        <Bounce>
+                        <Zoom>
                             <img src={banner3} className='w-full' alt="" />
-                        </Bounce>
+                        </Zoom>
                     </div>
                 </SwiperSlide>
             </Swiper>

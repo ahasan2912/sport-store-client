@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../Router/AuthProvider';
 import MyEquipmentCard from '../components/MyEquipmentCard';
-import { Bounce } from 'react-awesome-reveal';
+import { Bounce, Zoom } from 'react-awesome-reveal';
 
 
 const MyEequipment = () => {
@@ -18,9 +18,9 @@ const MyEequipment = () => {
 
     return (
         <div className='max-w-7xl mx-auto my-10'>
-            <Bounce>
+            <Zoom>
                 <h1 className='text-5xl font-semibold text-center'>My Equipmnts</h1>
-            </Bounce>
+            </Zoom>
             {
                 equipments.length === 0 ? <div>
                     <p className='text-3xl flex flex-col items-center justify-center h-[50vh]'>You have no equipments. If you want to added equipment please <Link to='/addequipment' className='text-blue-600'>clicked</Link></p>
