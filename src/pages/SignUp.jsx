@@ -26,7 +26,7 @@ const SignUp = () => {
             setError('Password should be at least 6 characters or longer');
             return;
         }
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        const passwordRegex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
         if (!passwordRegex.test(password)) {
             setError("Password must contain at least one lowercase and one Uppercase and more 6 charecter");
             return;
