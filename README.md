@@ -1,3 +1,4 @@
+# [Server Side: ](https://github.com/ahasan2912/sport-store-server)
 # Project Name: Sports Store
 The Sports Accessories Online Store is a responsive e-commerce platform designed to provide customers with an efficient and user-friendly shopping experience for a wide range of sports equipment and apparel. The website offers features such as intuitive browsing, secure user authentication, and detailed product reviews. It caters to various sports disciplines, ensuring accessibility for enthusiasts and professionals alike. The platform also includes robust product management, allowing seamless inventory updates. With a focus on functionality and design, the store ensures a responsive and engaging experience across all devices, aiming to meet the needs of sports enthusiasts worldwide.
 
